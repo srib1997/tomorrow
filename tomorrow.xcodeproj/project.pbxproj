@@ -12,6 +12,7 @@
 		90626EEA21A7AD9B001EC786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90626EE821A7AD9B001EC786 /* Main.storyboard */; };
 		90626EEC21A7AD9C001EC786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90626EEB21A7AD9C001EC786 /* Assets.xcassets */; };
 		90626EEF21A7AD9C001EC786 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90626EED21A7AD9C001EC786 /* LaunchScreen.storyboard */; };
+		90AE409A21A7FB7400EFC2F4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AE409921A7FB7400EFC2F4 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		90626EEB21A7AD9C001EC786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90626EEE21A7AD9C001EC786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90626EF021A7AD9C001EC786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90AE409921A7FB7400EFC2F4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				90626EE421A7AD9B001EC786 /* AppDelegate.swift */,
 				90626EE621A7AD9B001EC786 /* ViewController.swift */,
 				90626EE821A7AD9B001EC786 /* Main.storyboard */,
+				90AE409921A7FB7400EFC2F4 /* SecondViewController.swift */,
 				90626EEB21A7AD9C001EC786 /* Assets.xcassets */,
 				90626EED21A7AD9C001EC786 /* LaunchScreen.storyboard */,
 				90626EF021A7AD9C001EC786 /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90AE409A21A7FB7400EFC2F4 /* SecondViewController.swift in Sources */,
 				90626EE721A7AD9B001EC786 /* ViewController.swift in Sources */,
 				90626EE521A7AD9B001EC786 /* AppDelegate.swift in Sources */,
 			);
@@ -283,6 +287,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L32TP9YMNY;
 				INFOPLIST_FILE = tomorrow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -301,6 +306,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L32TP9YMNY;
 				INFOPLIST_FILE = tomorrow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
