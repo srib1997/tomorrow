@@ -36,6 +36,30 @@ class SecondViewController: UIViewController,UITextFieldDelegate {
         
         itemTextField.text = ""
         
+        //time
+        let  timesObject = UserDefaults.standard.object(forKey: "times")
+        
+        var  times:[String]
+        
+        let now = Date()
+        
+        let dformatter = DateFormatter()
+        dformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+        
+        if let timesItem = timesObject as? [String] {
+            
+            times = timesItem
+            
+            times.append(dformatter.string(from: now))
+            
+        } else {
+            
+            times = [String(dformatter.dateFormat!)]
+            
+        }
+        
+        UserDefaults.standard.set(times, forKey: "times")
+        
     }
     
     override func viewDidLoad() {

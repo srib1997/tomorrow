@@ -21,15 +21,13 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ey-ah-rw8">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="rewind" id="nHI-Rz-pqd"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="kiJ-RO-l6Q"/>
-                                    <barButtonItem systemItem="add" id="MLS-Tn-aL3">
+                                    <barButtonItem systemItem="compose" id="MLS-Tn-aL3">
                                         <connections>
-                                            <segue destination="ylm-RY-9ya" kind="show" id="gyL-no-Du6"/>
+                                            <segue destination="ylm-RY-9ya" kind="show" animates="NO" id="gyL-no-Du6"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="O1v-xG-WFV"/>
-                                    <barButtonItem systemItem="fastForward" id="GJo-ZK-D25"/>
                                 </items>
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyp-UH-gho">
@@ -88,9 +86,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WqF-zX-xRM">
-                                <rect key="frame" x="50" y="119" width="315" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-0X-wST">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="明天事明天做" id="BFL-7k-3Vq">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="Fki-FC-I67">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="swt-fi-5SI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="完成" id="yZP-cS-iBX">
+                                            <connections>
+                                                <action selector="add:" destination="ylm-RY-9ya" id="so7-zF-G56"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入文字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WqF-zX-xRM">
+                                <rect key="frame" x="141.5" y="318.5" width="92.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -98,27 +112,15 @@
                                     <outlet property="delegate" destination="ylm-RY-9ya" id="cMG-vb-BdO"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWG-Pb-EY3">
-                                <rect key="frame" x="184" y="188" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="add:" destination="ylm-RY-9ya" eventType="touchUpInside" id="WXr-Bz-v2t"/>
-                                </connections>
-                            </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Zv-aG-PR2">
-                                <rect key="frame" x="0.0" y="579" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem systemItem="reply" id="Gxm-9f-pxX">
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="a2Q-gS-vBO"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JDv-0X-wST" firstAttribute="leading" secondItem="M61-8b-yC2" secondAttribute="leading" id="0mt-XH-vrH"/>
+                            <constraint firstItem="WqF-zX-xRM" firstAttribute="centerY" secondItem="4KN-gE-qjj" secondAttribute="centerY" id="bwl-Gc-oLQ"/>
+                            <constraint firstItem="JDv-0X-wST" firstAttribute="top" secondItem="M61-8b-yC2" secondAttribute="top" id="dOH-Rn-Hzg"/>
+                            <constraint firstItem="JDv-0X-wST" firstAttribute="trailing" secondItem="M61-8b-yC2" secondAttribute="trailing" id="j3D-rV-a20"/>
+                            <constraint firstItem="WqF-zX-xRM" firstAttribute="centerX" secondItem="4KN-gE-qjj" secondAttribute="centerX" id="pk2-JB-h6s"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="M61-8b-yC2"/>
                     </view>
                     <toolbarItems/>
