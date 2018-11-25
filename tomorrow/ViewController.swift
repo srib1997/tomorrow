@@ -23,20 +23,28 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     @IBOutlet weak var tabel: UITableView!
     
     var items: [String] = []
-    
+    var times: [String] = []
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return items.count
+        return times.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
+//        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
+//
+//        cell.textLabel?.text = items[indexPath.row]
+//
         
-        cell.textLabel?.text = items[indexPath.row]
         
-        cell.textLabel?.textColor = UIColor.black
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
         
+        cell.timeLabel?.text = items[indexPath.row]
+        cell.itemLabel?.text = times[indexPath.row]
+        
+        cell.timeLabel?.textColor = UIColor.black
+
         return cell
     }
     
@@ -51,6 +59,17 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         }
         
         tabel.reloadData()
+        
+        let timesObject = UserDefaults.standard.object(forKey: "times")
+        
+        
+        if let timesItems = timesObject as? [String] {
+            
+            times = timesItems
+            
+        }
+        
+
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -58,10 +77,13 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         if editingStyle == UITableViewCell.EditingStyle.delete {
             
             items.remove(at: indexPath.row)
+            times.remove(at: indexPath.row)
             
             tabel.reloadData()
             
             UserDefaults.standard.set(items, forKey: "items")
+            UserDefaults.standard.set(times, forKey: "times")
+
         }
     }
     

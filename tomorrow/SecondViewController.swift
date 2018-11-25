@@ -28,17 +28,41 @@ class SecondViewController: UIViewController,UITextFieldDelegate {
             
             items = tempItems
             
-            items.append(dformatter.string(from: now) + "    " + itemTextField.text!)
+            items.append(itemTextField.text!)
             
             print(items)
         } else {
             
-            items = [dformatter.string(from: now) + "    " + itemTextField.text!]
+            items = [itemTextField.text!]
         }
         
         UserDefaults.standard.set(items, forKey: "items")
         
         itemTextField.text = ""
+        
+        //time
+        let  timesObject = UserDefaults.standard.object(forKey: "times")
+        
+        var  times:[String]
+        
+        dformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+        
+        if let timesItem = timesObject as? [String] {
+            
+            times = timesItem
+            
+            times.append(dformatter.string(from: now))
+            
+        } else {
+            
+            times = [dformatter.string(from: now)]
+            
+        }
+        
+        UserDefaults.standard.set(times, forKey: "times")
+        
+
+
     }
     
     override func viewDidLoad() {
