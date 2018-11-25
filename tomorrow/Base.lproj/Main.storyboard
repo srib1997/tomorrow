@@ -71,9 +71,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yon-oz-NaY">
+                                                    <rect key="frame" x="0.0" y="29" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yon-oz-NaY" firstAttribute="leading" secondItem="jPD-fE-fie" secondAttribute="leading" id="9dx-Pz-fF9"/>
+                                                <constraint firstAttribute="bottom" secondItem="yon-oz-NaY" secondAttribute="bottom" constant="29.5" id="Ctl-U3-DpN"/>
+                                                <constraint firstItem="yon-oz-NaY" firstAttribute="top" secondItem="jPD-fE-fie" secondAttribute="top" constant="29" id="Qex-ML-8v1"/>
+                                                <constraint firstAttribute="trailing" secondItem="yon-oz-NaY" secondAttribute="trailing" constant="372" id="ZeY-Re-n7c"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dayLabel" destination="yon-oz-NaY" id="ZDv-yZ-alV"/>
                                             <outlet property="itemLabel" destination="LFa-vE-98a" id="pBc-hG-7za"/>
                                             <outlet property="timeLabel" destination="zTB-yE-ROG" id="CIl-fS-iCQ"/>
                                         </connections>
@@ -117,7 +130,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-0X-wST">
-                                <rect key="frame" x="0.0" y="44" width="453" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="明天事明天做" id="BFL-7k-3Vq">
                                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="Fki-FC-I67">
@@ -133,8 +146,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入文字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WqF-zX-xRM">
-                                <rect key="frame" x="161" y="433" width="92.5" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入文字" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WqF-zX-xRM">
+                                <rect key="frame" x="161" y="328" width="92.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -142,14 +155,33 @@
                                     <outlet property="delegate" destination="ylm-RY-9ya" id="cMG-vb-BdO"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入要做的事：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8X-UA-1aU">
+                                <rect key="frame" x="20" y="134" width="374" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="明天時做的事變紅色:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eP-rB-3iJ">
+                                <rect key="frame" x="68" y="250" width="279" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JDv-0X-wST" firstAttribute="leading" secondItem="M61-8b-yC2" secondAttribute="leading" id="0mt-XH-vrH"/>
-                            <constraint firstItem="WqF-zX-xRM" firstAttribute="centerY" secondItem="4KN-gE-qjj" secondAttribute="centerY" id="bwl-Gc-oLQ"/>
+                            <constraint firstItem="M61-8b-yC2" firstAttribute="trailing" secondItem="d8X-UA-1aU" secondAttribute="trailing" constant="20" id="0yg-6i-NNH"/>
+                            <constraint firstItem="M61-8b-yC2" firstAttribute="trailing" secondItem="WqF-zX-xRM" secondAttribute="trailing" constant="160.5" id="H0o-P8-iQm"/>
+                            <constraint firstItem="d8X-UA-1aU" firstAttribute="top" secondItem="JDv-0X-wST" secondAttribute="bottom" constant="46" id="HHU-Hu-frg"/>
+                            <constraint firstItem="d8X-UA-1aU" firstAttribute="leading" secondItem="M61-8b-yC2" secondAttribute="leading" constant="20" id="IU5-4w-xeq"/>
+                            <constraint firstItem="WqF-zX-xRM" firstAttribute="top" secondItem="5eP-rB-3iJ" secondAttribute="bottom" constant="42" id="Maq-iG-qqB"/>
+                            <constraint firstItem="M61-8b-yC2" firstAttribute="trailing" secondItem="5eP-rB-3iJ" secondAttribute="trailing" constant="67" id="VLl-ta-LT9"/>
+                            <constraint firstItem="WqF-zX-xRM" firstAttribute="leading" secondItem="M61-8b-yC2" secondAttribute="leading" constant="161" id="Yyg-Ko-VEU"/>
+                            <constraint firstItem="5eP-rB-3iJ" firstAttribute="top" secondItem="d8X-UA-1aU" secondAttribute="bottom" constant="68" id="ZOf-D5-9Gs"/>
                             <constraint firstItem="JDv-0X-wST" firstAttribute="top" secondItem="M61-8b-yC2" secondAttribute="top" id="dOH-Rn-Hzg"/>
+                            <constraint firstItem="5eP-rB-3iJ" firstAttribute="leading" secondItem="M61-8b-yC2" secondAttribute="leading" constant="68" id="ifz-3T-7MH"/>
                             <constraint firstItem="JDv-0X-wST" firstAttribute="trailing" secondItem="M61-8b-yC2" secondAttribute="trailing" id="j3D-rV-a20"/>
-                            <constraint firstItem="WqF-zX-xRM" firstAttribute="centerX" secondItem="4KN-gE-qjj" secondAttribute="centerX" id="pk2-JB-h6s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M61-8b-yC2"/>
                     </view>

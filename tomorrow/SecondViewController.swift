@@ -30,7 +30,6 @@ class SecondViewController: UIViewController,UITextFieldDelegate {
             
             items.append(itemTextField.text!)
             
-            print(items)
         } else {
             
             items = [itemTextField.text!]
@@ -45,27 +44,36 @@ class SecondViewController: UIViewController,UITextFieldDelegate {
         
         var  times:[String]
         
-        dformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
-        
         if let timesItem = timesObject as? [String] {
             
             times = timesItem
             
             times.append(dformatter.string(from: now))
-            
         } else {
             
             times = [dformatter.string(from: now)]
-            
         }
         
         UserDefaults.standard.set(times, forKey: "times")
         
-
-
+        //get day
+        let calendar = Calendar.current
+        let day = calendar.component(.day, from: now)
+        var getday:[String]
+        let getdayObject = UserDefaults.standard.object(forKey: "getday")
+        if let getdayItem = getdayObject as? [String] {
+            getday = getdayItem
+            getday.append(String(day))
+        } else {
+            getday = [String(day)]
+        }
+        UserDefaults.standard.set(getday, forKey: "getday")
+        
+        print(items, times, getday)
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
     }
     
