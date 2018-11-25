@@ -9,39 +9,58 @@
 import UIKit
 
 class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
-
-    let cellContent = ["Rob", "kirsten", "tommy" , "relphine"]
+    
+    @IBOutlet weak var tabel: UITableView!
+    
+    var items: [String] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return cellContent.count
+        return items.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
         
-        cell.textLabel?.text = cellContent[indexPath.row]
+        cell.textLabel?.text = items[indexPath.row]
         
         return cell
+        
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let arrayObject = UserDefaults.standard.object(forKey: "name")
+      
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let itemsObject = UserDefaults.standard.object(forKey: "items")
         
-        if let araay = arrayObject as? NSArray {
+        
+        if let tempItems = itemsObject as? [String] {
             
-            print(araay)
+            items = tempItems
             
         }
         
-        UserDefaults.standard.set(cellContent, forKey: "name")
+        tabel.reloadData()
         
     }
-
-
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            
+            items.remove(at: indexPath.row)
+            
+            tabel.reloadData()
+            
+            UserDefaults.standard.set(items, forKey: "items")
+        }
+    }
 }
 
